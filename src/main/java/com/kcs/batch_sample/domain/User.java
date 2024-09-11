@@ -22,12 +22,4 @@ public class User {
     @Email(message = "Invalid email format")
     @Column(name = "email", nullable = false)
     private String email;
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
