@@ -1,4 +1,4 @@
-package com.kcs.batch_sample.batch;
+package com.kcs.batch_sample.batch.job;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,7 +40,7 @@ public class IndividualProcessingJob {
     private final ObjectMapper objectMapper;
     private final BatchLogRepository batchLogRepository;
 
-    @Bean
+    @Bean(name = "processIndividualJob")
     public Job processIndividualJob() throws Exception {
         return new JobBuilder("processIndividualJob", jobRepository)
                 .start(processIndividualStep())
